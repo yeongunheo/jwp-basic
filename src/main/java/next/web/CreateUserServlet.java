@@ -24,6 +24,7 @@ public class CreateUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = new User(req.getParameter("userId"), req.getParameter("password"), req.getParameter("name"),
                 req.getParameter("email"));
+        req.setAttribute("user", user);
         log.debug("user : {}", user);
         DataBase.addUser(user);
         resp.sendRedirect("/user/list");
