@@ -34,7 +34,7 @@ public class RequestMapping {
 		logger.info("Initialized Request Mapping!");
 	}
 	
-	public static Controller findController(String url) {
+	public Controller findController(String url) {
 		return mappings.get(url);
 	}
 	
